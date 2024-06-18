@@ -15,7 +15,7 @@ function main(params) {
     },
   };
 
-  extra["proxy-groups"] = proxy_groups.map((item) => {
+  extra["proxy-groups"] = params["proxy-groups"].map((item) => {
     return {
       ...item,
       use: ["warp"],
