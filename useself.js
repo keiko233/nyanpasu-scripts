@@ -152,6 +152,13 @@ function main(params) {
         path: "./ruleset/GooseGooseDuck.txt",
         interval: 86400,
       },
+      Steam: {
+        type: "http",
+        behavior: "ipcidr",
+        url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Steam.yaml",
+        path: "./ruleset/Steam.yaml",
+        interval: 86400,
+      },
     },
   };
 
@@ -160,6 +167,7 @@ function main(params) {
   const extra_rules = [
     ...sshport_rules,
     "RULE-SET,apple,Apple",
+    "RULE-SET,Steam,Steam",
     "RULE-SET,telegramcidr,Telegram",
     "RULE-SET,OpenAI,OpenAI",
     "RULE-SET,google,Google",
@@ -207,6 +215,12 @@ function main(params) {
       type: "select",
       proxies: getProxies(["Selected"]),
       icon: "	https://cdn-icons-png.flaticon.com/128/179/179309.png",
+    },
+    {
+      name: "Steam",
+      type: "select",
+      proxies: getProxies(["Selected"]),
+      icon: "https://cdn-icons-png.flaticon.com/128/3670/3670233.png",
     },
     {
       name: "Telegram",
