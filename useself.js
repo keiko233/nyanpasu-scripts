@@ -145,6 +145,13 @@ function main(params) {
         path: "./ruleset/EHGallery.yaml",
         interval: 86400,
       },
+      GooseGooseDuck: {
+        type: "http",
+        behavior: "ipcidr",
+        url: "https://raw.githubusercontent.com/huyyi/ggd/master/ggd.list",
+        path: "./ruleset/GooseGooseDuck.txt",
+        interval: 86400,
+      },
     },
   };
 
@@ -160,6 +167,7 @@ function main(params) {
     "RULE-SET,OneDrive,OneDrive",
     "RULE-SET,ProxyMedia,ProxyMedia",
     "RULE-SET,EHGallery,EHGallery",
+    "RULE-SET,GooseGooseDuck,Goose Goose Duck",
     "RULE-SET,BanAD,Shield",
     "RULE-SET,BanEasyList,Shield",
     "RULE-SET,BanEasyListChina,Shield",
@@ -241,6 +249,12 @@ function main(params) {
       type: "select",
       proxies: ["Selected", ...getProxies()],
       icon: "https://cdn-icons-png.flaticon.com/512/9171/9171530.png",
+    },
+    {
+      name: "Goose Goose Duck",
+      type: "select",
+      proxies: ["Selected", ...getProxies()],
+      icon: "https://img.icons8.com/?size=128&id=OzCecOchnPlK&format=png",
     },
     {
       name: "Proxies",
