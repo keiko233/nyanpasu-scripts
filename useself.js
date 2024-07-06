@@ -159,6 +159,13 @@ function main(params) {
         path: "./ruleset/Steam.yaml",
         interval: 86400,
       },
+      SteamCN: {
+        type: "http",
+        behavior: "ipcidr",
+        url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/SteamCN.yaml",
+        path: "./ruleset/SteamCN.yaml",
+        interval: 86400,
+      },
     },
   };
 
@@ -168,6 +175,7 @@ function main(params) {
     ...sshport_rules,
     "RULE-SET,apple,Apple",
     "RULE-SET,Steam,Steam",
+    "RULE-SET,SteamCN,SteamCN",
     "RULE-SET,telegramcidr,Telegram",
     "RULE-SET,OpenAI,OpenAI",
     "RULE-SET,google,Google",
@@ -221,6 +229,12 @@ function main(params) {
       type: "select",
       proxies: getProxies(["Selected"]),
       icon: "https://cdn-icons-png.flaticon.com/128/3670/3670233.png",
+    },
+    {
+      name: "SteamCN",
+      type: "select",
+      proxies: getProxies(["Selected"]),
+      icon: "https://cdn-icons-png.flaticon.com/512/2626/2626307.png",
     },
     {
       name: "Telegram",
