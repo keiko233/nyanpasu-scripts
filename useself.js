@@ -166,6 +166,13 @@ function main(params) {
         path: "./ruleset/SteamCN.yaml",
         interval: 86400,
       },
+      Unity: {
+        type: "http",
+        behavior: "domain",
+        url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Unity/Unity.yaml",
+        path: "./ruleset/Unity.yaml",
+        interval: 86400,
+      },
     },
   };
 
@@ -181,6 +188,7 @@ function main(params) {
     "RULE-SET,google,Google",
     "RULE-SET,Microsoft,Microsoft",
     "RULE-SET,OneDrive,OneDrive",
+    "RULE-SET,Unity,Unity",
     "RULE-SET,ProxyMedia,ProxyMedia",
     "RULE-SET,EHGallery,EHGallery",
     "RULE-SET,GooseGooseDuck,Goose Goose Duck",
@@ -266,6 +274,13 @@ function main(params) {
       proxies: getProxies(["Selected"]),
       url: "http://www.msftconnecttest.com/connecttest.txt",
       icon: "https://cdn-icons-png.flaticon.com/512/873/873136.png",
+    },
+    {
+      name: "Unity",
+      type: "select",
+      proxies: getProxies(["Selected"]),
+      url: "http://unity.com",
+      icon: "https://cdn-icons-png.flaticon.com/512/5969/5969346.png",
     },
     {
       name: "OpenAI",
