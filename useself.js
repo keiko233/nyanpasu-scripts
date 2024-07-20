@@ -173,6 +173,20 @@ function main(params) {
         path: "./ruleset/Unity.yaml",
         interval: 86400,
       },
+      VRChatAssets: {
+        type: "http",
+        behavior: "domain",
+        url: "https://github.com/Elenoxe/clash-rules-vrchat/raw/main/VRChatAssets.list",
+        path: "./ruleset/VRChatAssets.txt",
+        interval: 86400,
+      },
+      VRChatEngine: {
+        type: "http",
+        behavior: "classical",
+        url: "https://github.com/Elenoxe/clash-rules-vrchat/raw/main/VRChatEngine.list",
+        path: "./ruleset/VRChatEngine.txt",
+        interval: 86400,
+      },
     },
   };
 
@@ -192,6 +206,8 @@ function main(params) {
     "RULE-SET,ProxyMedia,ProxyMedia",
     "RULE-SET,EHGallery,EHGallery",
     "RULE-SET,GooseGooseDuck,Goose Goose Duck",
+    "RULE-SET,VRChatAssets,VRChat",
+    "RULE-SET,VRChatEngine,VRChat",
     "RULE-SET,BanAD,Shield",
     "RULE-SET,BanEasyList,Shield",
     "RULE-SET,BanEasyListChina,Shield",
@@ -306,6 +322,13 @@ function main(params) {
       type: "select",
       proxies: ["Selected", ...getProxies()],
       icon: "https://img.icons8.com/?size=128&id=OzCecOchnPlK&format=png",
+    },
+    {
+      name: "VRChat",
+      type: "select",
+      proxies: ["Selected", ...getProxies()],
+      url: "https://api.vrchat.cloud",
+      icon: "https://www.svgrepo.com/show/331635/vrchat.svg",
     },
     {
       name: "Proxies",
