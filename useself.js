@@ -1,6 +1,4 @@
-// Define the `main` function
-
-function main(params) {
+export default function(params) {
   const proxies = params.proxies;
 
   const extra = {
@@ -82,105 +80,105 @@ function main(params) {
         path: "./ruleset/applications.yaml",
         interval: 86400,
       },
-      BanAD: {
+      banad: {
         type: "http",
         behavior: "domain",
         url: "https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Providers/BanAD.yaml",
         path: "./ruleset/BanAD.yaml",
         interval: 86400,
       },
-      BanEasyList: {
+      baneasylist: {
         type: "http",
         behavior: "domain",
         url: "https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Providers/BanEasyList.yaml",
         path: "./ruleset/BanEasyList.yaml",
         interval: 86400,
       },
-      BanEasyListChina: {
+      baneasylistchina: {
         type: "http",
         behavior: "domain",
         url: "https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Providers/BanEasyListChina.yaml",
         path: "./ruleset/BanEasyListChina.yaml",
         interval: 86400,
       },
-      BanEasyPrivacy: {
+      baneasyprivacy: {
         type: "http",
         behavior: "domain",
         url: "https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Providers/BanEasyPrivacy.yaml",
         path: "./ruleset/BanEasyPrivacy.yaml",
         interval: 86400,
       },
-      ProxyMedia: {
+      proxymedia: {
         type: "http",
         behavior: "domain",
         url: "https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Providers/ProxyMedia.yaml",
         path: "./ruleset/ProxyMedia.yaml",
         interval: 86400,
       },
-      OpenAI: {
+      openai: {
         type: "http",
         behavior: "classical",
         url: "https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Providers/OpenAi.yaml",
         path: "./ruleset/OpenAI.yaml",
         interval: 86400,
       },
-      Microsoft: {
+      microsoft: {
         type: "http",
         behavior: "domain",
         url: "https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Providers/Microsoft.yaml",
         path: "./ruleset/Microsoft.yaml",
         interval: 86400,
       },
-      OneDrive: {
+      onedrive: {
         type: "http",
         behavior: "domain",
         url: "https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Providers/OneDrive.yaml",
         path: "./ruleset/OneDrive.yaml",
         interval: 86400,
       },
-      EHGallery: {
+      ehgallery: {
         type: "http",
         behavior: "domain",
         url: "https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Providers/Ruleset/EHGallery.yaml",
         path: "./ruleset/EHGallery.yaml",
         interval: 86400,
       },
-      GooseGooseDuck: {
+      goosegooseduck: {
         type: "http",
         behavior: "ipcidr",
         url: "https://raw.githubusercontent.com/huyyi/ggd/master/ggd.list",
         path: "./ruleset/GooseGooseDuck.txt",
         interval: 86400,
       },
-      Steam: {
+      steam: {
         type: "http",
         behavior: "ipcidr",
         url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Steam.yaml",
         path: "./ruleset/Steam.yaml",
         interval: 86400,
       },
-      SteamCN: {
+      steamcn: {
         type: "http",
         behavior: "ipcidr",
         url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/SteamCN.yaml",
         path: "./ruleset/SteamCN.yaml",
         interval: 86400,
       },
-      Unity: {
+      unity: {
         type: "http",
         behavior: "domain",
         url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Unity/Unity.yaml",
         path: "./ruleset/Unity.yaml",
         interval: 86400,
       },
-      VRChatAssets: {
+      vrchatassets: {
         type: "http",
         behavior: "domain",
         url: "https://github.com/Elenoxe/clash-rules-vrchat/raw/main/VRChatAssets.list",
         path: "./ruleset/VRChatAssets.txt",
         interval: 86400,
       },
-      VRChatEngine: {
+      vrchatengine: {
         type: "http",
         behavior: "classical",
         url: "https://github.com/Elenoxe/clash-rules-vrchat/raw/main/VRChatEngine.list",
@@ -195,23 +193,22 @@ function main(params) {
   const extra_rules = [
     ...sshport_rules,
     "RULE-SET,apple,Apple",
-    "RULE-SET,Steam,Steam",
-    "RULE-SET,SteamCN,SteamCN",
+    "RULE-SET,steam,Steam",
+    "RULE-SET,steamcn,SteamCN",
     "RULE-SET,telegramcidr,Telegram",
-    "RULE-SET,OpenAI,OpenAI",
+    "RULE-SET,openai,OpenAI",
     "RULE-SET,google,Google",
-    "RULE-SET,Microsoft,Microsoft",
-    "RULE-SET,OneDrive,OneDrive",
-    "RULE-SET,Unity,Unity",
-    "RULE-SET,ProxyMedia,ProxyMedia",
-    "RULE-SET,EHGallery,EHGallery",
-    "RULE-SET,GooseGooseDuck,Goose Goose Duck",
-    "RULE-SET,VRChatAssets,VRChat",
-    "RULE-SET,VRChatEngine,VRChat",
-    "RULE-SET,BanAD,Shield",
-    "RULE-SET,BanEasyList,Shield",
-    "RULE-SET,BanEasyListChina,Shield",
-    "RULE-SET,BanEasyPrivacy,Privacy",
+    "RULE-SET,microsoft,Microsoft",
+    "RULE-SET,onedrive,OneDrive",
+    "RULE-SET,proxymedia,ProxyMedia",
+    "RULE-SET,ehgallery,EHGallery",
+    "RULE-SET,goosegooseduck,Goose Goose Duck",
+    "RULE-SET,vrchatassets,VRChat",
+    "RULE-SET,vrchatengine,VRChat",
+    "RULE-SET,banad,Shield",
+    "RULE-SET,baneasylist,Shield",
+    "RULE-SET,baneasylistchina,Shield",
+    "RULE-SET,baneasyprivacy,Privacy",
     "RULE-SET,lancidr,DIRECT",
     "RULE-SET,applications,DIRECT",
     "RULE-SET,cncidr,DIRECT",

@@ -1,11 +1,9 @@
-// Define the `main` function
-
-function main(params) {
+export default function(params) {
   const proxies = params.proxies;
 
   const extra = {
     "rule-providers": {
-      GooseGooseDuck: {
+      "goose-goose-duck": {
         type: "http",
         behavior: "ipcidr",
         url: "https://raw.githubusercontent.com/huyyi/ggd/master/ggd.list",
@@ -17,7 +15,7 @@ function main(params) {
 
   const name = "Goose Goose Duck";
 
-  params.rules.push(`RULE-SET,GooseGooseDuck,${name}`);
+  params.rules.push(`RULE-SET,goose-goose-duck,${name}`);
 
   params["proxy-groups"].push({
     name,
