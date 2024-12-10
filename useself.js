@@ -185,11 +185,19 @@ export default function(params) {
         path: "./ruleset/VRChatEngine.txt",
         interval: 86400,
       },
+      claude: {
+        type: "http",
+        behavior: "domain",
+        url: "https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/ClaudeAI.list",
+        path: "./ruleset/ClaudeAI.txt",
+        interval: 86400,
+      },
     },
   };
 
   const sshport_rules = ["DST-PORT,22,SSH Port", "DST-PORT,29418,SSH Port"];
 
+    "RULE-SET,claude,Claude",
   const extra_rules = [
     ...sshport_rules,
     "RULE-SET,apple,Apple",
@@ -301,6 +309,13 @@ export default function(params) {
       proxies: ["Selected", ...getProxies()],
       url: "http://openai.com",
       icon: "https://cdn-icons-png.flaticon.com/512/11592/11592357.png",
+    },
+    {
+      name: "Claude",
+      type: "select",
+      proxies: ["Selected", ...getProxies()],
+      url: "https://www.anthropic.com",
+      icon: "https://img.icons8.com/?size=512&id=XDigO1YmCwbW&format=png",
     },
     {
       name: "ProxyMedia",
