@@ -118,21 +118,21 @@ export default function(params) {
       openai: {
         type: "http",
         behavior: "classical",
-        url: "https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Providers/OpenAi.yaml",
+        url: "https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/OpenAi.list",
         path: "./ruleset/OpenAI.yaml",
         interval: 86400,
       },
       microsoft: {
         type: "http",
         behavior: "domain",
-        url: "https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Providers/Microsoft.yaml",
+        url: "https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/Microsoft.list",
         path: "./ruleset/Microsoft.yaml",
         interval: 86400,
       },
       onedrive: {
         type: "http",
         behavior: "domain",
-        url: "https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Providers/OneDrive.yaml",
+        url: "https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/OneDrive.list",
         path: "./ruleset/OneDrive.yaml",
         interval: 86400,
       },
@@ -197,7 +197,6 @@ export default function(params) {
 
   const sshport_rules = ["DST-PORT,22,SSH Port", "DST-PORT,29418,SSH Port"];
 
-    "RULE-SET,claude,Claude",
   const extra_rules = [
     ...sshport_rules,
     "RULE-SET,apple,Apple",
@@ -205,6 +204,7 @@ export default function(params) {
     "RULE-SET,steamcn,SteamCN",
     "RULE-SET,telegramcidr,Telegram",
     "RULE-SET,openai,OpenAI",
+    "RULE-SET,claude,Claude",
     "RULE-SET,google,Google",
     "RULE-SET,microsoft,Microsoft",
     "RULE-SET,onedrive,OneDrive",
