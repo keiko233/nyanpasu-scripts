@@ -1,0 +1,5 @@
+# source: https://github.com/Elenoxe/clash-rules-vrchat/blob/main/VRChatAssets.list
+
+payload:
+  - DOMAIN,files.vrchat.cloud
+  - DOMAIN,file-variants.vrchat.com

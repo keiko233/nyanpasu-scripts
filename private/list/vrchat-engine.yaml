@@ -1,0 +1,9 @@
+# source: https://github.com/Elenoxe/clash-rules-vrchat/blob/main/VRChatEngine.list
+
+payload:
+  - DOMAIN,api.vrchat.cloud
+  - DOMAIN,pipeline.vrchat.cloud
+  - DOMAIN,ns.photonengine.io
+  - IP-CIDR,91.199.81.0/24,no-resolve
+  - IP-CIDR,216.120.180.0/24,no-resolve
+  - IP-CIDR,83.229.32.0/24,no-resolve
