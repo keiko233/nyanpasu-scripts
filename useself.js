@@ -192,6 +192,13 @@ export default function(params) {
         path: "./ruleset/ClaudeAI.txt",
         interval: 86400,
       },
+      epicgames:{
+        type: "http",
+        behavior: "domain",
+        url: "https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Ruleset/Epic.list",
+        path: "./ruleset/EpicGames.txt",
+        interval: 86400,
+      }
     },
   };
 
@@ -205,6 +212,7 @@ export default function(params) {
     "RULE-SET,telegramcidr,Telegram",
     "RULE-SET,openai,OpenAI",
     "RULE-SET,claude,Claude",
+    "RULE-SET,epicgames,EpicGames",
     "RULE-SET,google,Google",
     "RULE-SET,microsoft,Microsoft",
     "RULE-SET,onedrive,OneDrive",
@@ -267,6 +275,13 @@ export default function(params) {
       proxies: getProxies(["Selected"]),
       url: "http://steamcommunity.com",
       icon: "https://cdn-icons-png.flaticon.com/512/2626/2626307.png",
+    },
+    {
+      name: "EpicGames",
+      type: "select",
+      proxies: getProxies(["Selected"]),
+      url: "https://store.epicgames.com/",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/3/31/Epic_Games_logo.svg",
     },
     {
       name: "Telegram",
