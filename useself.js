@@ -191,6 +191,13 @@ export default function(params) {
         url: "https://rawcdn.githack.com/keiko233/nyanpasu-scripts/refs/heads/main/private/list/ssh-port.yaml?min=1",
         path: "./ruleset/ssh-port.yaml",
         interval: 86400,
+      },
+      spotify: {
+        type: "http",
+        behavior: "domain",
+        url: "https://rawcdn.githack.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Spotify/Spotify.yaml?min=1",
+        path: "./ruleset/Spotify.yaml",
+        interval: 86400,
       }
     },
   };
@@ -203,6 +210,7 @@ export default function(params) {
     "RULE-SET,telegramcidr,Telegram",
     "RULE-SET,openai,OpenAI",
     "RULE-SET,claude,Claude",
+    "RULE-SET,spotify,Spotify",
     "RULE-SET,epicgames,EpicGames",
     "RULE-SET,google,Google",
     "RULE-SET,microsoft,Microsoft",
@@ -277,6 +285,13 @@ export default function(params) {
       proxies: ["Selected", ...getProxies()],
       url: "http://store.steamchina.com",
       icon: "https://cdn-icons-png.flaticon.com/512/2111/2111646.png",
+    },
+    {
+      name: "Spotify",
+      type: "select",
+      proxies: ["Selected", ...getProxies()],
+      url: "https://open.spotify.com",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg",
     },
     {
       name: "Google",
