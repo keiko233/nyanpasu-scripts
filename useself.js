@@ -243,13 +243,13 @@ export default function(params) {
       name: "Selected",
       type: "select",
       proxies: getProxies(),
-      icon: "https://cdn-icons-png.flaticon.com/512/16222/16222029.png",
+      icon: "https://rawcdn.githack.com/keiko233/nyanpasu-scripts/refs/heads/main/private/icon/gradient.svg?min=1",
     },
     {
       name: "SSH Port",
       type: "select",
       proxies: ["Selected", ...getProxies()],
-      icon: "https://cdn-icons-png.flaticon.com/512/5136/5136897.png",
+      icon: "https://cdn-icons-png.flaticon.com/512/11743/11743804.png",
     },
     {
       name: "Apple",
@@ -312,7 +312,7 @@ export default function(params) {
       type: "select",
       proxies: getProxies(["Selected"]),
       url: "http://www.msftconnecttest.com/connecttest.txt",
-      icon: "https://cdn-icons-png.flaticon.com/512/873/873136.png",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Microsoft_Office_OneDrive_%282019%E2%80%93present%29.svg",
     },
     {
       name: "Unity",
@@ -333,7 +333,7 @@ export default function(params) {
       type: "select",
       proxies: ["Selected", ...getProxies()],
       url: "https://www.anthropic.com",
-      icon: "https://img.icons8.com/?size=512&id=XDigO1YmCwbW&format=png",
+      icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.13.0/files/dark/claude-color.png",
     },
     {
       name: "EHGallery",
