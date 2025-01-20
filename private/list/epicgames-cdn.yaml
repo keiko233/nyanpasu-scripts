@@ -1,2 +1,4 @@
 payload:
  - DOMAIN-SUFFIX,epicgamescdn.com
+ - DOMAIN-SUFFIX,download.epicgames.com
+ - DOMAIN-SUFFIX,akamaized.net
