@@ -1,4 +1,4 @@
-export default function(params) {
+export default function (params) {
   const proxies = params.proxies;
 
   const extra = {
@@ -6,71 +6,78 @@ export default function(params) {
       reject: {
         type: "http",
         behavior: "classical",
-        url: "https://raw.githack.com/Loyalsoldier/clash-rules/release/reject.txt?min=1",
+        url: "https://rawcdn.githack.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/AdvertisingLite/AdvertisingLite_Classical.yaml?min=1",
         path: "./ruleset/reject.yaml",
         interval: 86400,
       },
       apple: {
         type: "http",
         behavior: "classical",
-        url: "https://raw.githack.com/Loyalsoldier/clash-rules/release/apple.txt?min=1",
+        url: "https://rawcdn.githack.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Apple/Apple_Classical.yaml?min=1",
         path: "./ruleset/apple.yaml",
         interval: 86400,
       },
       google: {
         type: "http",
         behavior: "classical",
-        url: "https://raw.githack.com/Loyalsoldier/clash-rules/release/google.txt?min=1",
+        url: "https://rawcdn.githack.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Google/Google.yaml?min=1",
         path: "./ruleset/google.yaml",
         interval: 86400,
       },
-      proxy: {
+      google_fcm: {
         type: "http",
         behavior: "classical",
-        url: "https://raw.githack.com/Loyalsoldier/clash-rules/release/proxy.txt?min=1",
-        path: "./ruleset/proxy.yaml",
+        url: "https://rawcdn.githack.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleFCM/GoogleFCM.yaml?min=1",
+        path: "./ruleset/google_fcm.yaml",
         interval: 86400,
       },
-      direct: {
+      china: {
         type: "http",
         behavior: "classical",
-        url: "https://raw.githack.com/Loyalsoldier/clash-rules/release/direct.txt?min=1",
-        path: "./ruleset/direct.yaml",
-        interval: 86400,
-      },
-      gfw: {
-        type: "http",
-        behavior: "classical",
-        url: "https://raw.githack.com/Loyalsoldier/clash-rules/release/gfw.txt?min=1",
-        path: "./ruleset/gfw.yaml",
+        url: "https://rawcdn.githack.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/China/China_Classical.yaml?min=1",
+        path: "./ruleset/china.yaml",
         interval: 86400,
       },
       "tld-not-cn": {
         type: "http",
-        behavior: "classical",
+        behavior: "domain",
         url: "https://raw.githack.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt?min=1",
         path: "./ruleset/tld-not-cn.yaml",
+        interval: 86400,
+      },
+      proxy: {
+        type: "http",
+        behavior: "domain",
+        url: "https://raw.githack.com/Loyalsoldier/clash-rules/release/proxy.txt?min=1",
+        path: "./ruleset/proxy.txt",
+        interval: 86400,
+      },
+      direct: {
+        type: "http",
+        behavior: "domain",
+        url: "https://raw.githack.com/Loyalsoldier/clash-rules/release/direct.txt?min=1",
+        path: "./ruleset/direct.txt",
         interval: 86400,
       },
       telegramcidr: {
         type: "http",
         behavior: "ipcidr",
         url: "https://raw.githack.com/Loyalsoldier/clash-rules/release/telegramcidr.txt?min=1",
-        path: "./ruleset/telegramcidr.yaml",
+        path: "./ruleset/telegramcidr.txt",
         interval: 86400,
       },
       cncidr: {
         type: "http",
         behavior: "ipcidr",
         url: "https://raw.githack.com/Loyalsoldier/clash-rules/release/cncidr.txt?min=1",
-        path: "./ruleset/cncidr.yaml",
+        path: "./ruleset/cncidr.txt",
         interval: 86400,
       },
       lancidr: {
         type: "http",
         behavior: "ipcidr",
         url: "https://raw.githack.com/Loyalsoldier/clash-rules/release/lancidr.txt?min=1",
-        path: "./ruleset/lancidr.yaml",
+        path: "./ruleset/lancidr.txt",
         interval: 86400,
       },
       applications: {
@@ -83,7 +90,7 @@ export default function(params) {
       baneasyprivacy: {
         type: "http",
         behavior: "classical",
-        url: "https://rawcdn.githack.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/EasyPrivacy/EasyPrivacy.list?min=1",
+        url: "https://rawcdn.githack.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/EasyPrivacy/EasyPrivacy_Classical.yaml?min=1",
         path: "./ruleset/BanEasyPrivacy.yaml",
         interval: 86400,
       },
@@ -124,21 +131,21 @@ export default function(params) {
       },
       goosegooseduck: {
         type: "http",
-        behavior: "ipcidr",
+        behavior: "classical",
         url: "https://rawcdn.githack.com/keiko233/nyanpasu-scripts/refs/heads/main/private/list/goosegooseduck.yaml?min=1",
         path: "./ruleset/goosegooseduck.yaml",
         interval: 86400,
       },
       steam: {
         type: "http",
-        behavior: "ipcidr",
+        behavior: "classical",
         url: "https://rawcdn.githack.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Steam/Steam.yaml?min=1",
         path: "./ruleset/Steam.yaml",
         interval: 86400,
       },
       steamcn: {
         type: "http",
-        behavior: "ipcidr",
+        behavior: "classical",
         url: "https://rawcdn.githack.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/SteamCN/SteamCN.yaml?min=1",
         path: "./ruleset/SteamCN.yaml",
         interval: 86400,
@@ -171,7 +178,7 @@ export default function(params) {
         path: "./ruleset/Claude.yaml",
         interval: 86400,
       },
-      epicgames:{
+      epicgames: {
         type: "http",
         behavior: "classical",
         url: "https://rawcdn.githack.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Epic/Epic.yaml?min=1",
@@ -198,7 +205,7 @@ export default function(params) {
         url: "https://rawcdn.githack.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Spotify/Spotify.yaml?min=1",
         path: "./ruleset/Spotify.yaml",
         interval: 86400,
-      }
+      },
     },
   };
 
@@ -220,13 +227,15 @@ export default function(params) {
     "RULE-SET,vrchatassets,VRChat",
     "RULE-SET,vrchatengine,VRChat",
     "RULE-SET,baneasyprivacy,REJECT",
+    "RULE-SET,advertising,REJECT",
     "RULE-SET,lancidr,DIRECT",
     "RULE-SET,applications,DIRECT",
+    "RULE-SET,google_fcm,DIRECT",
     "RULE-SET,cncidr,DIRECT",
-    "RULE-SET,cncidr,DIRECT",
+    "RULE-SET,china,DIRECT",
     "RULE-SET,epicgames_cdn,DIRECT",
-    "RULE-SET,gfw,Proxies",
     "RULE-SET,tld-not-cn,Proxies",
+    "RULE-SET,proxy,Proxies",
     "MATCH,Proxies",
   ];
 
