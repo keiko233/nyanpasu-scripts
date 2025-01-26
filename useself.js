@@ -38,6 +38,13 @@ export default function (params) {
         path: "./ruleset/china.yaml",
         interval: 86400,
       },
+      gfw: {
+        type: "http",
+        behavior: "domain",
+        url: "https://rawcdn.githack.com/Loyalsoldier/clash-rules/refs/heads/release/gfw.txt?min=1",
+        path: "./ruleset/gfw.yaml",
+        interval: 86400,
+      },
       "tld-not-cn": {
         type: "http",
         behavior: "domain",
@@ -206,6 +213,13 @@ export default function (params) {
         path: "./ruleset/Spotify.yaml",
         interval: 86400,
       },
+      reject: {
+        type: "http",
+        behavior: "domain",
+        url: "https://rawcdn.githack.com/Loyalsoldier/clash-rules/refs/heads/release/reject.txt?min=1",
+        path: "./ruleset/reject.txt",
+        interval: 86400,
+      },
     },
   };
 
@@ -228,6 +242,7 @@ export default function (params) {
     "RULE-SET,vrchatengine,VRChat",
     "RULE-SET,baneasyprivacy,REJECT",
     "RULE-SET,advertising,REJECT",
+    "RULE-SET,reject,REJECT",
     "RULE-SET,lancidr,DIRECT",
     "RULE-SET,applications,DIRECT",
     "RULE-SET,google_fcm,DIRECT",
@@ -235,6 +250,7 @@ export default function (params) {
     "RULE-SET,china,DIRECT",
     "RULE-SET,epicgames_cdn,DIRECT",
     "RULE-SET,tld-not-cn,Proxies",
+    "RULE-SET,gfw,Proxies",
     "RULE-SET,proxy,Proxies",
     "MATCH,Proxies",
   ];
