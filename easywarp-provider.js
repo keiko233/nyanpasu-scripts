@@ -1,6 +1,6 @@
-// Define the `main` function
+export default function (params) {
+  const proxies = params.proxies;
 
-function main(params) {
   const extra = {
     "proxy-providers": {
       warp: {
@@ -10,6 +10,7 @@ function main(params) {
         path: "./proxy_providers/neko_warp.yaml",
         override: {
           "additional-prefix": "WARP ",
+          "dialer-proxy": "WARP Dialer",
         },
       },
     },
@@ -21,6 +22,13 @@ function main(params) {
       use: ["warp"],
     };
   });
+
+  extra["proxy-groups"].push({
+    name: "WARP Dialer",
+    type: "select",
+    proxies: ["DIRECT", ...proxies.map((item) => item.name)],
+    icon: "https://www.applivery.com/wp-content/uploads/2024/11/Cloudflare-WARP.png",
+  })
 
   return { ...params, ...extra };
 }
