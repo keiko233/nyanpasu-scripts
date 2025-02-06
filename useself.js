@@ -220,11 +220,34 @@ export default function (params) {
         path: "./ruleset/reject.txt",
         interval: 86400,
       },
+      developer: {
+        type: "http",
+        behavior: "classical",
+        url: "https://rawcdn.githack.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Developer/Developer.yaml?min=1",
+        path: "./ruleset/Developer.yaml",
+        interval: 86400,
+      },
+      github: {
+        type: "http",
+        behavior: "classical",
+        url: "https://rawcdn.githack.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.yaml?min=1",
+        path: "./ruleset/GitHub.yaml",
+        interval: 86400,
+      },
+      game_download_cn: {
+        type: "http",
+        behavior: "classical",
+        url: "https://rawcdn.githack.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GameDownloadCN/GameDownloadCN.yaml?min=1",
+        path: "./ruleset/GameDownloadCN.yaml",
+        interval: 86400,
+      },
     },
   };
 
   const extra_rules = [
     "RULE-SET,ssh_port,SSH Port",
+    "RULE-SET,developer,Developer",
+    "RULE-SET,github,Developer",
     "RULE-SET,apple,Apple",
     "RULE-SET,steam,Steam",
     "RULE-SET,steamcn,SteamCN",
@@ -249,6 +272,7 @@ export default function (params) {
     "RULE-SET,cncidr,DIRECT",
     "RULE-SET,china,DIRECT",
     "RULE-SET,epicgames_cdn,DIRECT",
+    "RULE-SET,game_download_cn,DIRECT",
     "RULE-SET,tld-not-cn,Proxies",
     "RULE-SET,gfw,Proxies",
     "RULE-SET,proxy,Proxies",
@@ -275,6 +299,12 @@ export default function (params) {
       type: "select",
       proxies: ["Selected", ...getProxies()],
       icon: "https://cdn-icons-png.flaticon.com/512/11743/11743804.png",
+    },
+    {
+      name: "Developer",
+      type: "select",
+      proxies: ["Selected", ...getProxies()],
+      icon: "https://cdn-icons-png.flaticon.com/512/4997/4997543.png",
     },
     {
       name: "Apple",
