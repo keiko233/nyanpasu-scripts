@@ -234,10 +234,10 @@ export default function (params) {
         path: "./ruleset/GitHub.yaml",
         interval: 86400,
       },
-      game_download_cn: {
+      game_download: {
         type: "http",
         behavior: "classical",
-        url: "https://rawcdn.githack.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GameDownloadCN/GameDownloadCN.yaml?min=1",
+        url: "https://rawcdn.githack.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Game/GameDownload/GameDownload.yaml?min=1",
         path: "./ruleset/GameDownloadCN.yaml",
         interval: 86400,
       },
@@ -272,7 +272,7 @@ export default function (params) {
     "RULE-SET,cncidr,DIRECT",
     "RULE-SET,china,DIRECT",
     "RULE-SET,epicgames_cdn,DIRECT",
-    "RULE-SET,game_download_cn,DIRECT",
+    "RULE-SET,game_download,DIRECT",
     "RULE-SET,tld-not-cn,Proxies",
     "RULE-SET,gfw,Proxies",
     "RULE-SET,proxy,Proxies",
