@@ -241,6 +241,13 @@ export default function (params) {
         path: "./ruleset/GameDownloadCN.yaml",
         interval: 86400,
       },
+      game_download_self: {
+        type: "http",
+        behavior: "classical",
+        url: "https://rawcdn.githack.com/keiko233/nyanpasu-scripts/refs/heads/main/private/list/download.yaml?min=1",
+        path: "./ruleset/download.yaml",
+        interval: 86400,
+      },
     },
   };
 
@@ -273,6 +280,7 @@ export default function (params) {
     "RULE-SET,china,DIRECT",
     "RULE-SET,epicgames_cdn,DIRECT",
     "RULE-SET,game_download,DIRECT",
+    "RULE-SET,game_download_self,DIRECT",
     "RULE-SET,tld-not-cn,Proxies",
     "RULE-SET,gfw,Proxies",
     "RULE-SET,proxy,Proxies",
