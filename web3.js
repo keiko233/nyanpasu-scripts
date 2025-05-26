@@ -7,7 +7,7 @@ export default function (params) {
     append_web3: {
       type: "http",
       behavior: "classical",
-      url: "https://rawcdn.githack.com/keiko233/nyanpasu-scripts/refs/heads/main/private/list/web3.yaml?min=1",
+      url: "https://nyanpasu-script.majokeiko.com/keiko233/nyanpasu-scripts/refs/heads/main/private/list/web3.yaml",
       path: "./ruleset/append_web3.yaml",
       interval: 86400,
     },
@@ -25,7 +25,7 @@ export default function (params) {
 
   const extra_proxy_groups = [
     {
-      name: "SSH Port",
+      name: "Web3",
       type: "select",
       proxies: getProxies(),
       icon: "https://cdn-icons-png.flaticon.com/512/15208/15208440.png",
