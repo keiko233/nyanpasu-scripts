@@ -29,6 +29,15 @@ export default function (params) {
       type: "select",
       proxies: getProxies(),
       icon: "https://cdn-icons-png.flaticon.com/512/15208/15208440.png",
+      use: [
+        ...new Set(
+          params["proxy-groups"]
+            .filter((group) => group.use !== undefined)
+            .flatMap((group) =>
+              Array.isArray(group.use) ? group.use : [group.use]
+            )
+        ),
+      ],
     },
   ];
 
