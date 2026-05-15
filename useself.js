@@ -213,6 +213,13 @@ export default function (params) {
         path: "./ruleset/Spotify.yaml",
         interval: 86400,
       },
+      netflix: {
+        type: "http",
+        behavior: "classical",
+        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Netflix/Netflix.yaml",
+        path: "./ruleset/Netflix.yaml",
+        interval: 86400,
+      },
       reject: {
         type: "http",
         behavior: "domain",
@@ -262,6 +269,7 @@ export default function (params) {
     "RULE-SET,openai,OpenAI",
     "RULE-SET,claude,Claude",
     "RULE-SET,spotify,Spotify",
+    "RULE-SET,netflix,Netflix",
     "RULE-SET,epicgames,EpicGames",
     "RULE-SET,google,Google",
     "RULE-SET,microsoft,Microsoft",
@@ -361,6 +369,13 @@ export default function (params) {
       proxies: ["Selected", ...getProxies()],
       url: "https://open.spotify.com",
       icon: "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg",
+    },
+    {
+      name: "Netflix",
+      type: "select",
+      proxies: ["Selected", ...getProxies()],
+      url: "https://www.netflix.com",
+      icon: "https://images.ctfassets.net/4cd45et68cgf/Rx83JoRDMkYNlMC9MKzcB/2b14d5a59fc3937afd3f03191e19502d/Netflix-Symbol.png",
     },
     {
       name: "Google",
