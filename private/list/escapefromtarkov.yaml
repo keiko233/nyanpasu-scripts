@@ -1,0 +1,8 @@
+payload:
+  - DOMAIN-SUFFIX,escapefromtarkov.com
+  - DOMAIN-SUFFIX,battlestategames.com
+  - DOMAIN-SUFFIX,launcher.escapefromtarkov.com
+  - DOMAIN-SUFFIX,prod.escapefromtarkov.com
+  - DOMAIN-SUFFIX,tarkov.com
+  - PROCESS-NAME,BsgLauncher
+  - PROCESS-NAME,EscapeFromTarkov

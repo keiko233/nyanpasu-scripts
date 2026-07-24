@@ -241,6 +241,13 @@ export default function (params) {
         path: "./ruleset/GitHub.yaml",
         interval: 86400,
       },
+      escapefromtarkov: {
+        type: "http",
+        behavior: "classical",
+        url: "https://nyanpasu-script.majokeiko.com/keiko233/nyanpasu-scripts/refs/heads/main/private/list/escapefromtarkov.yaml",
+        path: "./ruleset/escapefromtarkov.yaml",
+        interval: 86400,
+      },
       game_download: {
         type: "http",
         behavior: "classical",
@@ -278,6 +285,7 @@ export default function (params) {
     "RULE-SET,goosegooseduck,Goose Goose Duck",
     "RULE-SET,vrchatassets,VRChat",
     "RULE-SET,vrchatengine,VRChat",
+    "RULE-SET,escapefromtarkov,Escape From Tarkov",
     "RULE-SET,epicgames_cdn,Download Service",
     "RULE-SET,game_download,Download Service",
     "RULE-SET,game_download_self,Download Service",
@@ -437,6 +445,13 @@ export default function (params) {
       proxies: ["Selected", ...getProxies()],
       url: "https://api.vrchat.cloud",
       icon: "https://www.svgrepo.com/show/331635/vrchat.svg",
+    },
+    {
+      name: "Escape From Tarkov",
+      type: "select",
+      proxies: ["Selected", ...getProxies()],
+      url: "https://escapefromtarkov.com",
+      icon: "https://cdn2.steamgriddb.com/icon/ccfac0e684af52c7a3fd89da04781638/32/512x512.png",
     },
     {
       name: "Proxies",
