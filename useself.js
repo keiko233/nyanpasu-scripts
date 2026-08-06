@@ -241,6 +241,13 @@ export default function (params) {
         path: "./ruleset/GitHub.yaml",
         interval: 86400,
       },
+      twitter: {
+        type: "http",
+        behavior: "classical",
+        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Twitter/Twitter.yaml",
+        path: "./ruleset/Twitter.yaml",
+        interval: 86400,
+      },
       escapefromtarkov: {
         type: "http",
         behavior: "classical",
@@ -269,6 +276,7 @@ export default function (params) {
     "RULE-SET,ssh_port,SSH Port",
     "RULE-SET,developer,Developer",
     "RULE-SET,github,Developer",
+    "RULE-SET,twitter,Twitter",
     "RULE-SET,apple,Apple",
     "RULE-SET,steam,Steam",
     "RULE-SET,steamcn,SteamCN",
@@ -336,6 +344,13 @@ export default function (params) {
       proxies: getProxies(["Selected"]),
       url: "http://captive.apple.com",
       icon: "	https://cdn-icons-png.flaticon.com/128/179/179309.png",
+    },
+    {
+      name: "Twitter",
+      type: "select",
+      proxies: getProxies(["Selected"]),
+      url: "http://x.com",
+      icon: "https://commons.wikimedia.org/wiki/File:X_icon.svg",
     },
     {
       name: "Steam",
