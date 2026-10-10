@@ -185,6 +185,13 @@ export default function (params) {
         path: "./ruleset/Claude.yaml",
         interval: 86400,
       },
+      anthropic: {
+        type: "http",
+        behavior: "classical",
+        url: "https://nyanpasu-script.majokeiko.com/VPSDance/ai-proxy-rules/refs/heads/main/rules/clash/anthropic.yaml",
+        path: "./ruleset/anthropic.yaml",
+        interval: 86400,
+      },
       epicgames: {
         type: "http",
         behavior: "classical",
@@ -283,6 +290,7 @@ export default function (params) {
     "RULE-SET,telegramcidr,Telegram",
     "RULE-SET,openai,OpenAI",
     "RULE-SET,claude,Claude",
+    "RULE-SET,anthropic,Claude",
     "RULE-SET,spotify,Spotify",
     "RULE-SET,netflix,Netflix",
     "RULE-SET,epicgames,EpicGames",
