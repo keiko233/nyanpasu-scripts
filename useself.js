@@ -1,3 +1,28 @@
+const res = (path) => {
+  return `https://nyanpasu-script.majokeiko.com/${path}`;
+};
+
+const icon = (path, { png = false, searchParams = {} } = {}) => {
+  const searchString = Object.entries({
+    width: 64,
+    height: 64,
+    ...searchParams,
+  })
+    .map(
+      ([key, value]) =>
+        `${encodeURIComponent(key)}=${encodeURIComponent(value)}`,
+    )
+    .join("&");
+
+  const url = `api.iconify.design/${path}.svg${searchString ? `?${searchString}` : ""}`;
+
+  if (png) {
+    return `https://wsrv.nl/?url=${url}&output=png&w=64&h=64`;
+  }
+
+  return `https://${url}`;
+};
+
 export default function (params) {
   const proxies = params.proxies;
 
@@ -6,273 +31,333 @@ export default function (params) {
       reject: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/AdvertisingLite/AdvertisingLite_Classical.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/AdvertisingLite/AdvertisingLite_Classical.yaml",
+        ),
         path: "./ruleset/reject.yaml",
         interval: 86400,
       },
       apple: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Apple/Apple_Classical.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Apple/Apple_Classical.yaml",
+        ),
         path: "./ruleset/apple.yaml",
         interval: 86400,
       },
       google: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Google/Google.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Google/Google.yaml",
+        ),
         path: "./ruleset/google.yaml",
         interval: 86400,
       },
       google_fcm: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleFCM/GoogleFCM.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleFCM/GoogleFCM.yaml",
+        ),
         path: "./ruleset/google_fcm.yaml",
         interval: 86400,
       },
       china: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/China/China_Classical.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/China/China_Classical.yaml",
+        ),
         path: "./ruleset/china.yaml",
         interval: 86400,
       },
       gfw: {
         type: "http",
         behavior: "domain",
-        url: "https://nyanpasu-script.majokeiko.com/Loyalsoldier/clash-rules/refs/heads/release/gfw.txt",
+        url: res("Loyalsoldier/clash-rules/refs/heads/release/gfw.txt"),
         path: "./ruleset/gfw.yaml",
         interval: 86400,
       },
       "tld-not-cn": {
         type: "http",
         behavior: "domain",
-        url: "https://nyanpasu-script.majokeiko.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt",
+        url: res("Loyalsoldier/clash-rules/release/tld-not-cn.txt"),
         path: "./ruleset/tld-not-cn.yaml",
         interval: 86400,
       },
       proxy: {
         type: "http",
         behavior: "domain",
-        url: "https://nyanpasu-script.majokeiko.com/Loyalsoldier/clash-rules/release/proxy.txt",
+        url: res("Loyalsoldier/clash-rules/release/proxy.txt"),
         path: "./ruleset/proxy.txt",
         interval: 86400,
       },
       direct: {
         type: "http",
         behavior: "domain",
-        url: "https://nyanpasu-script.majokeiko.com/Loyalsoldier/clash-rules/release/direct.txt",
+        url: res("Loyalsoldier/clash-rules/release/direct.txt"),
         path: "./ruleset/direct.txt",
         interval: 86400,
       },
       telegramcidr: {
         type: "http",
         behavior: "ipcidr",
-        url: "https://nyanpasu-script.majokeiko.com/Loyalsoldier/clash-rules/release/telegramcidr.txt",
+        url: res("Loyalsoldier/clash-rules/release/telegramcidr.txt"),
         path: "./ruleset/telegramcidr.txt",
         interval: 86400,
       },
       cncidr: {
         type: "http",
         behavior: "ipcidr",
-        url: "https://nyanpasu-script.majokeiko.com/Loyalsoldier/clash-rules/release/cncidr.txt",
+        url: res("Loyalsoldier/clash-rules/release/cncidr.txt"),
         path: "./ruleset/cncidr.txt",
         interval: 86400,
       },
       lancidr: {
         type: "http",
         behavior: "ipcidr",
-        url: "https://nyanpasu-script.majokeiko.com/Loyalsoldier/clash-rules/release/lancidr.txt",
+        url: res("Loyalsoldier/clash-rules/release/lancidr.txt"),
         path: "./ruleset/lancidr.txt",
         interval: 86400,
       },
       applications: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/Loyalsoldier/clash-rules/release/applications.txt",
+        url: res("Loyalsoldier/clash-rules/release/applications.txt"),
         path: "./ruleset/applications.yaml",
         interval: 86400,
       },
       baneasyprivacy: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/EasyPrivacy/EasyPrivacy_Classical.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/EasyPrivacy/EasyPrivacy_Classical.yaml",
+        ),
         path: "./ruleset/BanEasyPrivacy.yaml",
         interval: 86400,
       },
       advertising: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/AdvertisingLite/AdvertisingLite.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/AdvertisingLite/AdvertisingLite.yaml",
+        ),
         path: "./ruleset/advertising.yaml",
         interval: 86400,
       },
       openai: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OpenAI/OpenAI.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OpenAI/OpenAI.yaml",
+        ),
         path: "./ruleset/OpenAI.yaml",
         interval: 86400,
       },
       microsoft: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Microsoft/Microsoft.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Microsoft/Microsoft.yaml",
+        ),
         path: "./ruleset/Microsoft.yaml",
         interval: 86400,
       },
       onedrive: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OneDrive/OneDrive.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OneDrive/OneDrive.yaml",
+        ),
         path: "./ruleset/OneDrive.yaml",
         interval: 86400,
       },
       ehgallery: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/EHGallery/EHGallery.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/EHGallery/EHGallery.yaml",
+        ),
         path: "./ruleset/EHGallery.yaml",
         interval: 86400,
       },
       goosegooseduck: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/keiko233/nyanpasu-scripts/refs/heads/main/private/list/goosegooseduck.yaml",
+        url: res(
+          "keiko233/nyanpasu-scripts/refs/heads/main/private/list/goosegooseduck.yaml",
+        ),
         path: "./ruleset/goosegooseduck.yaml",
         interval: 86400,
       },
       steam: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Steam/Steam.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Steam/Steam.yaml",
+        ),
         path: "./ruleset/Steam.yaml",
         interval: 86400,
       },
       steamcn: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/SteamCN/SteamCN.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/SteamCN/SteamCN.yaml",
+        ),
         path: "./ruleset/SteamCN.yaml",
         interval: 86400,
       },
       unity: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Unity/Unity.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Unity/Unity.yaml",
+        ),
         path: "./ruleset/Unity.yaml",
         interval: 86400,
       },
       vrchatassets: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/keiko233/nyanpasu-scripts/refs/heads/main/private/list/vrchat-assets.yaml",
+        url: res(
+          "keiko233/nyanpasu-scripts/refs/heads/main/private/list/vrchat-assets.yaml",
+        ),
         path: "./ruleset/vrchat-assets.yaml",
         interval: 86400,
       },
       vrchatengine: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/keiko233/nyanpasu-scripts/refs/heads/main/private/list/vrchat-engine.yaml",
+        url: res(
+          "keiko233/nyanpasu-scripts/refs/heads/main/private/list/vrchat-engine.yaml",
+        ),
         path: "./ruleset/vrchat-engine.yaml",
         interval: 86400,
       },
       claude: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Claude/Claude.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Claude/Claude.yaml",
+        ),
         path: "./ruleset/Claude.yaml",
         interval: 86400,
       },
       anthropic: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/VPSDance/ai-proxy-rules/refs/heads/main/rules/clash/anthropic.yaml",
+        url: res(
+          "VPSDance/ai-proxy-rules/refs/heads/main/rules/clash/anthropic.yaml",
+        ),
         path: "./ruleset/anthropic.yaml",
         interval: 86400,
       },
       epicgames: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Epic/Epic.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Epic/Epic.yaml",
+        ),
         path: "./ruleset/EpicGames.yaml",
         interval: 86400,
       },
       epicgames_cdn: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/keiko233/nyanpasu-scripts/refs/heads/main/private/list/epicgames-cdn.yaml",
+        url: res(
+          "keiko233/nyanpasu-scripts/refs/heads/main/private/list/epicgames-cdn.yaml",
+        ),
         path: "./ruleset/epicgames-cdn.yaml",
         interval: 86400,
       },
       ssh_port: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/keiko233/nyanpasu-scripts/refs/heads/main/private/list/ssh-port.yaml",
+        url: res(
+          "keiko233/nyanpasu-scripts/refs/heads/main/private/list/ssh-port.yaml",
+        ),
         path: "./ruleset/ssh-port.yaml",
         interval: 86400,
       },
       spotify: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Spotify/Spotify.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Spotify/Spotify.yaml",
+        ),
         path: "./ruleset/Spotify.yaml",
         interval: 86400,
       },
       netflix: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Netflix/Netflix.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Netflix/Netflix.yaml",
+        ),
         path: "./ruleset/Netflix.yaml",
         interval: 86400,
       },
       reject: {
         type: "http",
         behavior: "domain",
-        url: "https://nyanpasu-script.majokeiko.com/Loyalsoldier/clash-rules/refs/heads/release/reject.txt",
+        url: res("Loyalsoldier/clash-rules/refs/heads/release/reject.txt"),
         path: "./ruleset/reject.txt",
         interval: 86400,
       },
       developer: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Developer/Developer.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Developer/Developer.yaml",
+        ),
         path: "./ruleset/Developer.yaml",
         interval: 86400,
       },
       github: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.yaml",
+        ),
         path: "./ruleset/GitHub.yaml",
         interval: 86400,
       },
       twitter: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Twitter/Twitter.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Twitter/Twitter.yaml",
+        ),
         path: "./ruleset/Twitter.yaml",
         interval: 86400,
       },
       escapefromtarkov: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/keiko233/nyanpasu-scripts/refs/heads/main/private/list/escapefromtarkov.yaml",
+        url: res(
+          "keiko233/nyanpasu-scripts/refs/heads/main/private/list/escapefromtarkov.yaml",
+        ),
         path: "./ruleset/escapefromtarkov.yaml",
         interval: 86400,
       },
       game_download: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Game/GameDownload/GameDownload.yaml",
+        url: res(
+          "blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Game/GameDownload/GameDownload.yaml",
+        ),
         path: "./ruleset/GameDownloadCN.yaml",
         interval: 86400,
       },
       game_download_self: {
         type: "http",
         behavior: "classical",
-        url: "https://nyanpasu-script.majokeiko.com/keiko233/nyanpasu-scripts/refs/heads/main/private/list/download.yaml",
+        url: res(
+          "keiko233/nyanpasu-scripts/refs/heads/main/private/list/download.yaml",
+        ),
         path: "./ruleset/download.yaml",
         interval: 86400,
       },
@@ -332,155 +417,165 @@ export default function (params) {
       name: "Selected",
       type: "select",
       proxies: getProxies(),
-      icon: "https://nyanpasu-script.majokeiko.com/keiko233/nyanpasu-scripts/refs/heads/main/private/icon/gradient.svg",
+      icon: res(
+        "keiko233/nyanpasu-scripts/refs/heads/main/private/icon/gradient.svg",
+      ),
     },
     {
       name: "SSH Port",
       type: "select",
       proxies: ["Selected", ...getProxies()],
-      icon: "https://cdn-icons-png.flaticon.com/512/11743/11743804.png",
+      icon: icon("bi/terminal-fill", {
+        searchParams: {
+          color: "#1744ad",
+        },
+      }),
     },
     {
       name: "Developer",
       type: "select",
       proxies: ["Selected", ...getProxies()],
-      icon: "https://cdn-icons-png.flaticon.com/512/4997/4997543.png",
+      icon: icon("fluent-color/code-16"),
     },
     {
       name: "Apple",
       type: "select",
       proxies: getProxies(["Selected"]),
       url: "http://captive.apple.com",
-      icon: "	https://cdn-icons-png.flaticon.com/128/179/179309.png",
+      icon: icon("skill-icons/apple-light"),
     },
     {
       name: "Twitter",
       type: "select",
       proxies: getProxies(["Selected"]),
       url: "http://x.com",
-      icon: "https://commons.wikimedia.org/wiki/File:X_icon.svg",
+      icon: icon("logos/twitter"),
     },
     {
       name: "Steam",
       type: "select",
       proxies: getProxies(["Selected"]),
       url: "http://steamcommunity.com",
-      icon: "https://cdn-icons-png.flaticon.com/128/3670/3670233.png",
+      icon: icon("selfhst/steam"),
     },
     {
       name: "SteamCN",
       type: "select",
       proxies: getProxies(["Selected"]),
       url: "http://steamcommunity.com",
-      icon: "https://cdn-icons-png.flaticon.com/512/2626/2626307.png",
+      icon: icon("bi/steam"),
     },
     {
       name: "EpicGames",
       type: "select",
       proxies: getProxies(["Selected"]),
       url: "https://store.epicgames.com/",
-      icon: "https://upload.wikimedia.org/wikipedia/commons/3/31/Epic_Games_logo.svg",
+      icon: icon("simple-icons/epicgames"),
     },
     {
       name: "Download Service",
       type: "select",
       proxies: getProxies(["Selected"]),
-      icon: "https://cdn-icons-png.flaticon.com/512/9797/9797374.png",
+      icon: icon("material-icon-theme/folder-download"),
     },
     {
       name: "Telegram",
       type: "select",
       proxies: ["Selected", ...getProxies()],
       url: "http://store.steamchina.com",
-      icon: "https://cdn-icons-png.flaticon.com/512/2111/2111646.png",
+      icon: icon("logos/telegram"),
     },
     {
       name: "Spotify",
       type: "select",
       proxies: ["Selected", ...getProxies()],
       url: "https://open.spotify.com",
-      icon: "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg",
+      icon: icon("logos/spotify-icon"),
     },
     {
       name: "Netflix",
       type: "select",
       proxies: ["Selected", ...getProxies()],
       url: "https://www.netflix.com",
-      icon: "https://images.ctfassets.net/4cd45et68cgf/Rx83JoRDMkYNlMC9MKzcB/2b14d5a59fc3937afd3f03191e19502d/Netflix-Symbol.png",
+      icon: icon("thesvg-color/netflix"),
     },
     {
       name: "Google",
       type: "select",
       proxies: ["Selected", ...getProxies()],
       url: "http://www.gstatic.com/generate_204",
-      icon: "https://cdn-icons-png.flaticon.com/512/2702/2702602.png",
+      icon: icon("devicon/google"),
     },
     {
       name: "Microsoft",
       type: "select",
       proxies: ["Selected", ...getProxies()],
       url: "http://www.msftconnecttest.com/connecttest.txt",
-      icon: "https://cdn-icons-png.flaticon.com/512/732/732221.png",
+      icon: icon("logos/microsoft-icon"),
     },
     {
       name: "OneDrive",
       type: "select",
       proxies: getProxies(["Selected"]),
       url: "http://www.msftconnecttest.com/connecttest.txt",
-      icon: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Microsoft_Office_OneDrive_%282019%E2%80%93present%29.svg",
+      icon: icon("selfhst/microsoft-onedrive"),
     },
     {
       name: "Unity",
       type: "select",
       proxies: getProxies(["Selected"]),
       url: "http://unity.com",
-      icon: "https://cdn-icons-png.flaticon.com/512/5969/5969346.png",
+      icon: icon("skill-icons/unity-light"),
     },
     {
       name: "OpenAI",
       type: "select",
       proxies: ["Selected", ...getProxies()],
       url: "http://openai.com",
-      icon: "https://cdn-icons-png.flaticon.com/512/11592/11592357.png",
+      icon: icon("selfhst/openai-light"),
     },
     {
       name: "Claude",
       type: "select",
       proxies: ["Selected", ...getProxies()],
       url: "https://www.anthropic.com",
-      icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.13.0/files/dark/claude-color.png",
+      icon: icon("thesvg-color/claude"),
     },
     {
       name: "EHGallery",
       type: "select",
       proxies: ["Selected", ...getProxies()],
-      icon: "https://cdn-icons-png.flaticon.com/512/9171/9171530.png",
+      icon: icon("flat-color-icons/gallery"),
     },
     {
       name: "Goose Goose Duck",
       type: "select",
       proxies: ["Selected", ...getProxies()],
-      icon: "https://img.icons8.com/?size=128&id=OzCecOchnPlK&format=png",
+      icon: icon("twemoji/goose"),
     },
     {
       name: "VRChat",
       type: "select",
       proxies: ["Selected", ...getProxies()],
       url: "https://api.vrchat.cloud",
-      icon: "https://www.svgrepo.com/show/331635/vrchat.svg",
+      icon: res(
+        "keiko233/nyanpasu-scripts/refs/heads/main/private/icon/vrchat.svg",
+      ),
     },
     {
       name: "Escape From Tarkov",
       type: "select",
       proxies: ["Selected", ...getProxies()],
       url: "https://escapefromtarkov.com",
-      icon: "https://cdn2.steamgriddb.com/icon/ccfac0e684af52c7a3fd89da04781638/32/512x512.png",
+      icon: res(
+        "keiko233/nyanpasu-scripts/refs/heads/main/private/icon/escapefromtarkov.png",
+      ),
     },
     {
       name: "Proxies",
       type: "select",
       proxies: ["Selected", ...getProxies()],
-      icon: "https://cdn-icons-png.flaticon.com/512/9985/9985721.png",
+      icon: icon("fluent-color/agents-16"),
     },
   ];
 
