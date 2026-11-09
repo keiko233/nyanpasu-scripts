@@ -1,0 +1,22 @@
+override__dns:
+  enable: true
+  ipv6: false
+  listen: 127.0.0.1:7874
+  use-hosts: true
+  use-system-hosts: false
+
+  default-nameserver:
+    - tls://119.29.29.29
+    - tls://223.5.5.5
+
+  nameserver:
+    - tls://119.29.29.29
+    - tls://223.5.5.5
+    - https://dns.pub/dns-query
+    - https://dns.alidns.com/dns-query
+
+  proxy-server-nameserver:
+    - tls://119.29.29.29
+    - tls://223.5.5.5
+
+  enhanced-mode: redir-host
